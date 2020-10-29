@@ -1,20 +1,26 @@
 {
-  "dev": {
-    "awscloudformation": {
-      "AuthRoleName": "amplify-realtimesurvey-dev-05100-authRole",
-      "UnauthRoleArn": "arn:aws:iam::223184242587:role/amplify-realtimesurvey-dev-05100-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::223184242587:role/amplify-realtimesurvey-dev-05100-authRole",
-      "Region": "us-east-1",
-      "DeploymentBucketName": "amplify-realtimesurvey-dev-05100-deployment",
-      "UnauthRoleName": "amplify-realtimesurvey-dev-05100-unauthRole",
-      "StackName": "amplify-realtimesurvey-dev-05100",
-      "StackId": "arn:aws:cloudformation:us-east-1:223184242587:stack/amplify-realtimesurvey-dev-05100/bbcab1d0-19aa-11eb-8977-0a5cf73de175",
-      "AmplifyAppId": "ds107abyb4c1e"
-    },
-    "categories": {
-      "auth": {
-        "realtimesurveyf8f633a2": {}
-      }
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-realtimesurvey-dev-05100-authRole",
+            "UnauthRoleArn": "arn:aws:iam::223184242587:role/amplify-realtimesurvey-dev-05100-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::223184242587:role/amplify-realtimesurvey-dev-05100-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "amplify-realtimesurvey-dev-05100-deployment",
+            "UnauthRoleName": "amplify-realtimesurvey-dev-05100-unauthRole",
+            "StackName": "amplify-realtimesurvey-dev-05100",
+            "StackId": "arn:aws:cloudformation:us-east-1:223184242587:stack/amplify-realtimesurvey-dev-05100/bbcab1d0-19aa-11eb-8977-0a5cf73de175",
+            "AmplifyAppId": "ds107abyb4c1e"
+        },
+        "categories": {
+            "auth": {
+                "realtimesurveyf8f633a2": {}
+            },
+            "hosting": {
+                "amplifyhosting": {
+                    "appId": "ds107abyb4c1e",
+                    "type": "cicd"
+                }
+            }
+        }
     }
-  }
 }
