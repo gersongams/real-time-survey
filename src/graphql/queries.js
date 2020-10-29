@@ -11,6 +11,7 @@ export const getPoll = /* GraphQL */ `
           id
           title
           pollID
+          choices
           createdAt
           updatedAt
         }
@@ -56,6 +57,7 @@ export const getQuestion = /* GraphQL */ `
         createdAt
         updatedAt
       }
+      choices
       answers {
         items {
           id
@@ -88,6 +90,7 @@ export const listQuestions = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        choices
         answers {
           nextToken
         }
@@ -113,6 +116,7 @@ export const getAnswer = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        choices
         answers {
           nextToken
         }
@@ -139,6 +143,7 @@ export const listAnswers = /* GraphQL */ `
           id
           title
           pollID
+          choices
           createdAt
           updatedAt
         }

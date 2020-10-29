@@ -14,6 +14,7 @@ export const createPoll = /* GraphQL */ `
           id
           title
           pollID
+          choices
           createdAt
           updatedAt
         }
@@ -37,6 +38,7 @@ export const updatePoll = /* GraphQL */ `
           id
           title
           pollID
+          choices
           createdAt
           updatedAt
         }
@@ -60,6 +62,7 @@ export const deletePoll = /* GraphQL */ `
           id
           title
           pollID
+          choices
           createdAt
           updatedAt
         }
@@ -88,6 +91,7 @@ export const createQuestion = /* GraphQL */ `
         createdAt
         updatedAt
       }
+      choices
       answers {
         items {
           id
@@ -121,6 +125,7 @@ export const updateQuestion = /* GraphQL */ `
         createdAt
         updatedAt
       }
+      choices
       answers {
         items {
           id
@@ -154,6 +159,7 @@ export const deleteQuestion = /* GraphQL */ `
         createdAt
         updatedAt
       }
+      choices
       answers {
         items {
           id
@@ -187,6 +193,7 @@ export const createAnswer = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        choices
         answers {
           nextToken
         }
@@ -217,6 +224,7 @@ export const updateAnswer = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        choices
         answers {
           nextToken
         }
@@ -247,6 +255,7 @@ export const deleteAnswer = /* GraphQL */ `
           createdAt
           updatedAt
         }
+        choices
         answers {
           nextToken
         }
