@@ -11,6 +11,7 @@ const { Step } = Steps;
 const Poll = () => {
   let { pollId } = useParams();
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const [current, setCurrent] = useState(0);
   const [questions, setQuestions] = useState([]);
 
@@ -27,6 +28,7 @@ const Poll = () => {
       setLoading(false);
     } catch (err) {
       console.error("error fetching questions");
+      setError(err);
       setLoading(false);
     }
   }, [pollId]);
@@ -51,19 +53,21 @@ const Poll = () => {
   return (
     <div className="container">
       <h2>Poll: {pollId}</h2>
-      <>
-        <Steps current={current}>
-          {questions.map((item, index) => (
-            <Step key={item.id} title={`Question ${index + 1}`} />
-          ))}
-        </Steps>
-        <Question
-          next={next}
-          question={questions[current]}
-          total={questions.length}
-          current={current}
-        />
-      </>
+      {!error && !loading && (
+        <>
+          <Steps current={current}>
+            {questions.map((item, index) => (
+              <Step key={item.id} title={`Question ${index + 1}`} />
+            ))}
+          </Steps>
+          <Question
+            next={next}
+            question={questions[current]}
+            total={questions.length}
+            current={current}
+          />
+        </>
+      )}
     </div>
   );
 };
