@@ -15,7 +15,8 @@ const Home = () => {
       const polls = pollData.data.listPolls.items;
       setPolls(polls);
     } catch (err) {
-      console.log("error fetching todos");
+      console.error("error fetching poll");
+      message.error("error fetching poll");
     }
   }, []);
 

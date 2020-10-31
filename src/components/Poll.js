@@ -48,19 +48,18 @@ const Poll = () => {
     return <LoadingOutlined />;
   }
 
-  console.log(questions);
-
   return (
     <div className="container">
       <h2>Poll: {pollId}</h2>
       {!error && !loading && (
         <>
-          <Steps current={current}>
+          <Steps current={current} style={{ marginBottom: "1rem" }}>
             {questions.map((item, index) => (
               <Step key={item.id} title={`Question ${index + 1}`} />
             ))}
           </Steps>
           <Question
+            pollId={pollId}
             next={next}
             question={questions[current]}
             total={questions.length}

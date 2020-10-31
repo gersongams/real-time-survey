@@ -57,7 +57,6 @@ export const getQuestion = /* GraphQL */ `
         createdAt
         updatedAt
       }
-      choices
       answers {
         items {
           id
@@ -68,6 +67,7 @@ export const getQuestion = /* GraphQL */ `
         }
         nextToken
       }
+      choices
       createdAt
       updatedAt
     }
@@ -90,10 +90,10 @@ export const listQuestions = /* GraphQL */ `
           createdAt
           updatedAt
         }
-        choices
         answers {
           nextToken
         }
+        choices
         createdAt
         updatedAt
       }
@@ -116,10 +116,10 @@ export const getAnswer = /* GraphQL */ `
           createdAt
           updatedAt
         }
-        choices
         answers {
           nextToken
         }
+        choices
         createdAt
         updatedAt
       }

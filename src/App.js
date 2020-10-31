@@ -1,11 +1,12 @@
 import "./App.css";
-import { withAuthenticator } from "@aws-amplify/ui-react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { AmplifySignOut, withAuthenticator } from "@aws-amplify/ui-react";
+import { BrowserRouter as Router, Link, Route, Switch } from "react-router-dom";
 import Home from "./components/Home";
 import Poll from "./components/Poll";
 import React from "react";
 import { Layout } from "antd";
 import styled from "styled-components";
+import Results from "./components/Results";
 
 const { Header, Footer, Content } = Layout;
 
@@ -13,7 +14,10 @@ const StyledLayout = styled(Layout)`
   min-height: 100vh;
 
   .content {
-    padding: 2rem;
+    padding: 1rem;
+    @media (min-width: 900px) {
+      padding: 2rem;
+    }
   }
 
   .container {
@@ -45,15 +49,24 @@ const StyledLayout = styled(Layout)`
 const App = () => (
   <Router>
     <StyledLayout>
-      <Header>Header</Header>
+      <Header style={{ display: "flex", justifyContent: "space-between" }}>
+        <div>
+          <Link to="/">
+            <h1 style={{ color: "white" }}>Survey</h1>
+          </Link>
+        </div>
+        <div>
+          <AmplifySignOut button-text="Sign Out"></AmplifySignOut>
+        </div>
+      </Header>
       <Content className="content">
         <Switch>
           <Route path="/poll/:pollId">
             <Poll />
           </Route>
-          {/*<Route path="/questions">*/}
-          {/*  <Users />*/}
-          {/*</Route>*/}
+          <Route path="/results/:pollId">
+            <Results />
+          </Route>
           <Route path="/">
             <Home />
           </Route>

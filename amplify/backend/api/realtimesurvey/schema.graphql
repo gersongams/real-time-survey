@@ -9,8 +9,8 @@ type Question @model @key(name: "byPoll", fields: ["pollID"]) {
   title: String!
   pollID: ID!
   poll: Poll @connection(fields: ["pollID"])
-  choices: [String]
   answers: [Answer] @connection(keyName: "byQuestion", fields: ["id"])
+  choices: [String]
 }
 
 type Answer @model @key(name: "byQuestion", fields: ["questionID", "content"]) {
