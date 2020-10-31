@@ -48,6 +48,7 @@ export const getQuestion = /* GraphQL */ `
       id
       title
       pollID
+      choices
       poll {
         id
         name
@@ -67,7 +68,6 @@ export const getQuestion = /* GraphQL */ `
         }
         nextToken
       }
-      choices
       createdAt
       updatedAt
     }
@@ -84,6 +84,7 @@ export const listQuestions = /* GraphQL */ `
         id
         title
         pollID
+        choices
         poll {
           id
           name
@@ -93,7 +94,6 @@ export const listQuestions = /* GraphQL */ `
         answers {
           nextToken
         }
-        choices
         createdAt
         updatedAt
       }
@@ -106,10 +106,12 @@ export const getAnswer = /* GraphQL */ `
     getAnswer(id: $id) {
       id
       questionID
+      content
       question {
         id
         title
         pollID
+        choices
         poll {
           id
           name
@@ -119,11 +121,9 @@ export const getAnswer = /* GraphQL */ `
         answers {
           nextToken
         }
-        choices
         createdAt
         updatedAt
       }
-      content
       createdAt
       updatedAt
     }
@@ -139,6 +139,7 @@ export const listAnswers = /* GraphQL */ `
       items {
         id
         questionID
+        content
         question {
           id
           title
@@ -147,7 +148,6 @@ export const listAnswers = /* GraphQL */ `
           createdAt
           updatedAt
         }
-        content
         createdAt
         updatedAt
       }

@@ -82,6 +82,7 @@ export const createQuestion = /* GraphQL */ `
       id
       title
       pollID
+      choices
       poll {
         id
         name
@@ -101,7 +102,6 @@ export const createQuestion = /* GraphQL */ `
         }
         nextToken
       }
-      choices
       createdAt
       updatedAt
     }
@@ -116,6 +116,7 @@ export const updateQuestion = /* GraphQL */ `
       id
       title
       pollID
+      choices
       poll {
         id
         name
@@ -135,7 +136,6 @@ export const updateQuestion = /* GraphQL */ `
         }
         nextToken
       }
-      choices
       createdAt
       updatedAt
     }
@@ -150,6 +150,7 @@ export const deleteQuestion = /* GraphQL */ `
       id
       title
       pollID
+      choices
       poll {
         id
         name
@@ -169,7 +170,6 @@ export const deleteQuestion = /* GraphQL */ `
         }
         nextToken
       }
-      choices
       createdAt
       updatedAt
     }
@@ -183,10 +183,12 @@ export const createAnswer = /* GraphQL */ `
     createAnswer(input: $input, condition: $condition) {
       id
       questionID
+      content
       question {
         id
         title
         pollID
+        choices
         poll {
           id
           name
@@ -196,11 +198,9 @@ export const createAnswer = /* GraphQL */ `
         answers {
           nextToken
         }
-        choices
         createdAt
         updatedAt
       }
-      content
       createdAt
       updatedAt
     }
@@ -214,10 +214,12 @@ export const updateAnswer = /* GraphQL */ `
     updateAnswer(input: $input, condition: $condition) {
       id
       questionID
+      content
       question {
         id
         title
         pollID
+        choices
         poll {
           id
           name
@@ -227,11 +229,9 @@ export const updateAnswer = /* GraphQL */ `
         answers {
           nextToken
         }
-        choices
         createdAt
         updatedAt
       }
-      content
       createdAt
       updatedAt
     }
@@ -245,10 +245,12 @@ export const deleteAnswer = /* GraphQL */ `
     deleteAnswer(input: $input, condition: $condition) {
       id
       questionID
+      content
       question {
         id
         title
         pollID
+        choices
         poll {
           id
           name
@@ -258,11 +260,9 @@ export const deleteAnswer = /* GraphQL */ `
         answers {
           nextToken
         }
-        choices
         createdAt
         updatedAt
       }
-      content
       createdAt
       updatedAt
     }

@@ -70,6 +70,7 @@ export const onCreateQuestion = /* GraphQL */ `
       id
       title
       pollID
+      choices
       poll {
         id
         name
@@ -89,7 +90,6 @@ export const onCreateQuestion = /* GraphQL */ `
         }
         nextToken
       }
-      choices
       createdAt
       updatedAt
     }
@@ -101,6 +101,7 @@ export const onUpdateQuestion = /* GraphQL */ `
       id
       title
       pollID
+      choices
       poll {
         id
         name
@@ -120,7 +121,6 @@ export const onUpdateQuestion = /* GraphQL */ `
         }
         nextToken
       }
-      choices
       createdAt
       updatedAt
     }
@@ -132,6 +132,7 @@ export const onDeleteQuestion = /* GraphQL */ `
       id
       title
       pollID
+      choices
       poll {
         id
         name
@@ -151,7 +152,6 @@ export const onDeleteQuestion = /* GraphQL */ `
         }
         nextToken
       }
-      choices
       createdAt
       updatedAt
     }
@@ -162,10 +162,12 @@ export const onCreateAnswer = /* GraphQL */ `
     onCreateAnswer {
       id
       questionID
+      content
       question {
         id
         title
         pollID
+        choices
         poll {
           id
           name
@@ -175,11 +177,9 @@ export const onCreateAnswer = /* GraphQL */ `
         answers {
           nextToken
         }
-        choices
         createdAt
         updatedAt
       }
-      content
       createdAt
       updatedAt
     }
@@ -190,10 +190,12 @@ export const onUpdateAnswer = /* GraphQL */ `
     onUpdateAnswer {
       id
       questionID
+      content
       question {
         id
         title
         pollID
+        choices
         poll {
           id
           name
@@ -203,11 +205,9 @@ export const onUpdateAnswer = /* GraphQL */ `
         answers {
           nextToken
         }
-        choices
         createdAt
         updatedAt
       }
-      content
       createdAt
       updatedAt
     }
@@ -218,10 +218,12 @@ export const onDeleteAnswer = /* GraphQL */ `
     onDeleteAnswer {
       id
       questionID
+      content
       question {
         id
         title
         pollID
+        choices
         poll {
           id
           name
@@ -231,11 +233,9 @@ export const onDeleteAnswer = /* GraphQL */ `
         answers {
           nextToken
         }
-        choices
         createdAt
         updatedAt
       }
-      content
       createdAt
       updatedAt
     }

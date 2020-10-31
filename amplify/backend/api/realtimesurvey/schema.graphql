@@ -8,14 +8,14 @@ type Question @model @key(name: "byPoll", fields: ["pollID"]) {
   id: ID!
   title: String!
   pollID: ID!
+  choices: [String]
   poll: Poll @connection(fields: ["pollID"])
   answers: [Answer] @connection(keyName: "byQuestion", fields: ["id"])
-  choices: [String]
 }
 
 type Answer @model @key(name: "byQuestion", fields: ["questionID", "content"]) {
   id: ID!
   questionID: ID!
-  question: Question @connection(fields: ["questionID"])
   content: String!
+  question: Question @connection(fields: ["questionID"])
 }

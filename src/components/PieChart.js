@@ -6,7 +6,7 @@ const PieChart = ({ data }) => {
     const responses = data ? data.answers?.items : [];
     const formattedData = [];
     responses.forEach((response) => {
-      const idx = formattedData.findIndex((i) => i.label === response.content);
+      const idx = formattedData.findIndex((i) => i.id === response.content);
       if (idx === -1) {
         formattedData.push({
           id: response.content,
@@ -17,7 +17,7 @@ const PieChart = ({ data }) => {
         formattedData[idx] = {
           id: response.content,
           label: response.content,
-          value: formattedData[idx].votes + 1,
+          value: formattedData[idx].value + 1,
         };
       }
     });

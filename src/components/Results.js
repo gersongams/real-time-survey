@@ -77,7 +77,6 @@ const Results = () => {
           });
           setAnswers(answerState);
         }
-        // answerState[answerIdx].answers.push({content: onCreateAnswer.content})
       },
     });
     return () => subscription.unsubscribe();
